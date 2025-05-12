@@ -5,16 +5,25 @@ import './index.css';
 import { useTelegram } from './hooks/useTelegram';
 
 const Main = () => {
-  useTelegram();
+  try {
+    useTelegram();
+  } catch (e) {
+    console.warn('Telegram WebApp not available:', e);
+  }
   return <App />;
 };
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
-  const root = createRoot(rootElement);
-  root.render(
-    <StrictMode>
-      <Main />
-    </StrictMode>
-  );
+  try {
+    const root = createRoot(rootElement);
+    root.render(
+      <StrictMode>
+        <Main />
+      </StrictMode>
+    );
+  } catch (error) {
+    console.error('Failed to render app:', error);
+    rootElement.innerHTML = '<h1>Application Error</h1><p>Please try again later</p>';
+  }
 }
