@@ -3,14 +3,21 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/tg-shope/',
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
+    rollupOptions: {
+      external: ['fsevents']
+    }
   },
   server: {
     port: 3000,
     strictPort: true,
+  },
+  optimizeDeps: {
+    include: ['@vitejs/plugin-react'],
+    exclude: ['fsevents']
   }
 })
