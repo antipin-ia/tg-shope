@@ -1,7 +1,6 @@
 import type { SteamItem } from '../types/steamItem';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../store/cartSlice';
-import magIcon from '../assets/mag.png';
 
 interface ItemCardProps {
   item: SteamItem;
@@ -16,7 +15,7 @@ export const ItemCard = ({ item, onPurchase }: ItemCardProps) => {
 
   return (
     <div className="item-card">
-      <img src={magIcon} alt={item.name} />
+      <img src={'src/assets/mag.png'} alt={item.name} />
       <h3>{item.name}</h3>
       <p>{item.description}</p>
       <div className="price-container">
