@@ -6,7 +6,7 @@ export const CartIcon = () => {
   
   return (
     <div className="cart-icon">
-      <img src="/icons/cart.svg" alt="Cart" width="24" height="24" />
+      <img src="/src/assets/cart.png" alt="Cart" width="24" height="24" />
       {cartItems.length > 0 && (
         <span className="cart-badge">{cartItems.length}</span>
       )}
