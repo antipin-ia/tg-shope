@@ -8,7 +8,7 @@ export class SteamService {
         id: '1',
         name: 'Example Game',
         price: 19.99,
-        image: 'https://via.placeholder.com/150',
+        image: '//',
         description: 'Example game description',
         category: 'Action'
       },
@@ -16,7 +16,7 @@ export class SteamService {
         id: '2',
         name: 'Another Game',
         price: 29.99,
-        image: 'https://via.placeholder.com/150',
+        image: '//',
         description: 'Another game description',
         category: 'RPG',
         discount: 10

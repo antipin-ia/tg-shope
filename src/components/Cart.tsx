@@ -37,7 +37,7 @@ export const Cart = () => {
           <ul className="cart-items">
             {items.map(item => (
               <li key={item.id} className="cart-item">
-                <img src={item.image} alt={item.name} width="50" height="50" />
+                <img src={'src/assets/mag.png'} alt={item.name} width="50" height="50" />
                 <div>
                   <h3>{item.name}</h3>
                   <p>${item.price.toFixed(2)}</p>

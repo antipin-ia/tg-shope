@@ -39,7 +39,6 @@ export const Store = () => {
 
   return (
     <div className="store">
-      <h1>Steam Store</h1>
       <div className="items-grid">
         {items.map(item => (
           <ItemCard 
