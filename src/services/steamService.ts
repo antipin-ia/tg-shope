@@ -29,4 +29,10 @@ export class SteamService {
     console.log(`Purchasing item ${itemId}`);
     return true;
   }
+
+  static async purchaseItems(itemIds: string[]): Promise<boolean> {
+    // TODO: Реализовать логику массовой покупки
+    console.log(`Purchasing items: ${itemIds.join(', ')}`);
+    return true;
+  }
 }

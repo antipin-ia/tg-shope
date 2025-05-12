@@ -1,4 +1,6 @@
 import type { SteamItem } from '../types/steamItem';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../store/cartSlice';
 
 interface ItemCardProps {
   item: SteamItem;
@@ -6,6 +8,7 @@ interface ItemCardProps {
 }
 
 export const ItemCard = ({ item, onPurchase }: ItemCardProps) => {
+  const dispatch = useDispatch();
   const finalPrice = item.discount 
     ? item.price * (1 - item.discount / 100)
     : item.price;
@@ -24,7 +27,23 @@ export const ItemCard = ({ item, onPurchase }: ItemCardProps) => {
           <span className="discount-badge">-{item.discount}%</span>
         )}
       </div>
-      <button onClick={() => onPurchase(item.id)}>Buy</button>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onPurchase(item.id);
+        }}
+      >
+        Buy
+      </button>
+      <button
+        className="add-to-cart"
+        onClick={(e) => {
+          e.stopPropagation();
+          dispatch(addItem(item));
+        }}
+      >
+        Add to Cart
+      </button>
     </div>
   );
 };
