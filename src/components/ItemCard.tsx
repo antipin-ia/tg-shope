@@ -15,7 +15,7 @@ export const ItemCard = ({ item, onPurchase }: ItemCardProps) => {
 
   return (
     <div className="item-card">
-      <img src={item.image} alt={item.name} />
+      <img src={item.image || '/src/assets/mag.png'} alt={item.name} />
       <h3>{item.name}</h3>
       <p>{item.description}</p>
       <div className="price-container">
