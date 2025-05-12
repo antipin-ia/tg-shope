@@ -2,14 +2,14 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import './index.css';
-import { useTelegram } from './hooks/useTelegram';
+// import { useTelegram } from './hooks/useTelegram';
 
 const Main = () => {
-  try {
-    useTelegram();
-  } catch (e) {
-    console.warn('Telegram WebApp not available:', e);
-  }
+  // try {
+  //   useTelegram();
+  // } catch (e) {
+  //   console.warn('Telegram WebApp not available:', e);
+  // }
   return <App />;
 };
 
